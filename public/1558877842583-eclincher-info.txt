@@ -1,0 +1,347 @@
+http://devgirl.org/2014/07/31/phonegap-developers-guid/
+
+cordova plugin add cordova-plugin-actionsheet
+cordova plugin add cordova-plugin-appversion
+cordova plugin add cordova-plugin-camera
+cordova plugin add cordova-plugin-datepicker
+cordova plugin add cordova-plugin-device
+cordova plugin add cordova-plugin-device-name
+cordova plugin add cordova-plugin-dialogs
+cordova plugin add https://github.com/jeduan/cordova-plugin-facebook4 --save --variable APP_ID="179832135475414" --variable APP_NAME="eClincher"
+cordova plugin add cordova-plugin-file-transfer 
+cordova plugin add cordova-plugin-filepath
+cordova plugin add cordova-plugin-inappbrowser
+cordova plugin add cordova-plugin-intercom
+cordova plugin add cordova-instagram-plugin
+cordova plugin add ionic-plugin-keyboard 
+cordova plugin add cordova-plugin-media-capture
+cordova plugin add cordova-plugin-network-information
+cordova plugin add cordova-plugin-splashscreen
+cordova plugin add cordova-plugin-statusbar
+cordova plugin add cordova-plugin-whitelist
+cordova plugin add cc.fovea.cordova.purchase  --variable BILLING_KEY="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhgs6LbnZKDAafcSQfJGUhYEgBbLyXLbs8K4lIr30gyL7Z4c24zGPx937mmpJrGzCmicUXB0LYEcZ9+LzzfEnRXUZ/SGGOsY1xBfpY6D48yPpi6Y4h14HXUqZ63IG4m5C4S2YMqwoeGGLybuj2LDiet+noo+AULsvRE7lUUjPjwyrglQvV9bMqNfaWpKo1F+QztufxfcIr1NCANBLuGhFBVyq6qHcrpEvd2y5bzpl1S6Ur7KvOQqKWqc0ef0cnY5jgSAi/eT2ubB+fDZ7f8Y/IgosmLKA/CN1fD8x6Fewe+OyzVx5dW2G0v0jotpM3Lv6mKvaOxrBEUan68OcFDwl0wIDAQAB"
+cordova plugin add http://github.com/don/cordova-filechooser.git 
+cordova plugin add cordova-plugin-android-permissions
+cordova plugin add com.lampa.startapp
+cordova plugin add phonegap-plugin-push --variable SENDER_ID="252986834503"
+cordova plugin add cordova-plugin-streaming-media ( it is not needed )
+cordova plugin add https://github.com/napolitano/cordova-plugin-intent
+cordova plugin add cordova-plugin-autostart
+cordova plugin add cordova-sqlite-storage( it is not needed )
+cordova plugin add uk.co.workingedge.phonegap.plugin.istablet   ( it is not needed )
+cordova plugin add cordova-plugin-screen-orientation ( only for android )
+cordova plugin add cordova-plugin-googleplus --save --variable REVERSED_CLIENT_ID=com.googleusercontent.apps.252986834503-vfptuqqqhdjjg6c6o6tp3hcsarsejob2
+cordova plugin add https://github.com/lotterfriends/refreshgallery ( Only for android )
+
+https://www.instagram.com/developer/mobile-sharing/android-intents/#
+
+
+http://ourcodeworld.com/articles/read/101/how-to-list-your-cordova-app-in-open-with-menu-in-android-and-handle-the-intent-event
+
+
+cordova plugin add https://github.com/lotterfriends/refreshgallery
+cordova plugin add https://github.com/napolitano/cordova-plugin-intent
+cordova plugin add cordova-plugin-android-permissions
+cordova plugin add cordova-plugin-autostart
+cordova plugin add com.lampa.startapp
+
+
+cordova plugin add phonegap-plugin-push --variable SENDER_ID="1075601646139"
+cordova plugin add cc.fovea.cordova.purchase  --variable BILLING_KEY="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmsurNRHJqWYxMJGy7+PFuQeY+hu6jEik3CaWlPU9eFTLw7uQwAnGxeJHkvfOuyVFdO5+NjLfcvnV5FsTUFuq/oIu+Rac7hnN9A8JurZpKkjjaQm527/HiuCe/p4M7lYhlV4zAIUKpiE/B1WWBfTx4X8d2kgVVJRuyeyubtl5P/C974bCRYtW01+h2+8IBXMbKb8E+fw/tvrUfa54bRVFIF9fdWXR5GaokcAeKopGscdeEmnE+Tgm7QDgf5rW51DqZi222HA7WLfDKjn3Qr7pno7ydI8GBNAr5QF7r2PX2KubTmTmjaWIJIzVNzxO7s1mRDZbqghIOThbXT9T5kgbSQIDAQAB"
+cordova plugin add https://github.com/jeduan/cordova-plugin-facebook4 --save --variable APP_ID="179832135475414" --variable APP_NAME="eClincher"
+cordova plugin remove cordova-plugin-app-version
+cordova plugin remove phonegap-plugin-push
+cordova plugin remove http://github.com/don/cordova-filechooser.git
+
+cordova plugin add ionic-plugin-keyboard
+cordova plugin remove ionic-plugin-keyboard cordova-plugin-facebook4
+
+cordova plugin add cordova-plugin-facebook --variable FACEBOOK_DISPLAY_NAME="eClincher" --variable FACEBOOK_APP_ID="1543922082566801"
+cordova plugin add cordova-plugin-facebook --variable FACEBOOK_DISPLAY_NAME="eClincher" --variable FACEBOOK_APP_ID="179832135475414"
+
+-------------For com.eclinchertest-----------------------------
+keytool -genkey -v -keystore eclincher.keystore -alias eclinchermobileapps -keyalg RSA -keysize 2048 -validity 10000
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore E:\projects\eclincher\eclincher.keystore E:\Devices-and-Simulators\web\mobile_app\platforms\android\build\outputs\apk\android-release-unsigned.apk eclinchermobileapps
+
+C:\Users\IZ-Ram\AppData\Local\Android\sdk\build-tools\26.0.0\zipalign -v 4 E:\Devices-and-Simulators\web\mobile_app\platforms\android\build\outputs\apk\android-release-unsigned.apk E:\Devices-and-Simulators\web\mobile_app\platforms\android\build\outputs\apk\android-release.apk
+
+
+keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore E:\projects\eclincher\debug.keystore E:\apps\mobile_app\platforms\android\build\outputs\apk\android-debug.apk androiddebugkey
+C:\Users\Ram\AppData\Local\Android\sdk\build-tools\23.0.2\zipalign -v 4 E:\apps\mobile_app\platforms\android\build\outputs\apk\android-release-unsigned.apk E:\apps\mobile_app\platforms\android\build\outputs\apk\android-release.apk
+
+cordova plugin add cordova-plugin-googleplus --save --variable REVERSED_CLIENT_ID=com.googleusercontent.apps.1075601646139-kh1kh0qfl7d91fsoibhf7dpp5vj7tvef
+cordova plugin rm cordova-plugin-googleplus
+
+-------------For com.eclincher.eclincher-------------------------
+keytool -genkey -v -keystore C:\Users\Ram\Desktop\desktop\eclincher.keystore -alias eclinchermobileappsnew -keyalg RSA -keysize 2048 -validity 10000
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore C:\Users\Ram\Desktop\desktop\eclincher.keystore C:\Users\Ram\Documents\GitHub\Devices-and-Simulators\web\mobile_app\platforms\android\build\outputs\apk\android-release-unsigned.apk eclinchermobileappsnew
+
+C:\Users\Ram\AppData\Local\Android\sdk\build-tools\23.0.2\zipalign -v 4 C:\Users\Ram\Documents\GitHub\Devices-and-Simulators\web\mobile_app\platforms\android\build\outputs\apk\android-release-unsigned.apk C:\Users\Ram\Documents\GitHub\Devices-and-Simulators\web\mobile_app\platforms\android\build\outputs\apk\android-release.apk
+
+E://
+------------------
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore E:\projects\eclincher\eclincher.keystore E:\apps\eclincher\platforms\android\build\outputs\apk\android-release-unsigned.apk eclinchermobileappsnew
+C:\Users\Ram\AppData\Local\Android\sdk\build-tools\23.0.2\zipalign -v 4 E:\apps\eclincher\platforms\android\build\outputs\apk\android-release-unsigned.apk E:\apps\eclincher\platforms\android\build\outputs\apk\android-release.apk
+----------
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore E:\projects\eclincher\eclincher.keystore E:\Devices-and-Simulators\web\mobile_app\platforms\android\build\outputs\apk\android-release-unsigned.apk eclinchermobileappsnew
+C:\Users\IZ-Ram\AppData\Local\Android\sdk\build-tools\26.0.0\zipalign -v 4 E:\Devices-and-Simulators\web\mobile_app\platforms\android\build\outputs\apk\android-release-unsigned.apk E:\Devices-and-Simulators\web\mobile_app\platforms\android\build\outputs\apk\android-release.apk
+
+------------------------
+keytool -exportcert -list -v  -alias eclinchermobileappsnew -keystore C:\Users\Ram\Desktop\desktop\eclincher.keystore
+
+ keytool -exportcert -keystore E:\projects\eclincher\eclincher.keystore -list -v -alias eclinchermobileappsnew
+
+ keytool -list -v -keystore "%USERPROFILE%\.android\debug.keystore" -alias androiddebugkey -storepass android -keypass android
+ 
+  
+
+keytool -genkey -v -keystore C:\Users\Ram\Desktop\desktop\eclincher.keystore -alias eclinchermobileappsnew -keyalg RSA -keysize 2048 -validity 10000
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore C:\Users\Ram\Desktop\desktop\eclincher.keystore C:\Users\Ram\Documents\GitHub\Devices-and-Simulators\web\mobile_app\platforms\android\build\outputs\apk\android-release-unsigned.apk eclinchermobileappsnew
+
+C:\Users\Ram\AppData\Local\Android\sdk\build-tools\23.0.2\zipalign -v 4 C:\Users\Ram\Documents\GitHub\Devices-and-Simulators\web\mobile_app\platforms\android\build\outputs\apk\android-release-unsigned.apk C:\Users\Ram\Documents\GitHub\Devices-and-Simulators\web\mobile_app\platforms\android\build\outputs\apk\android-release.apk
+
+keytool -exportcert -alias eclinchermobileapps -keystore C:\Users\Ram\Desktop\desktop\eclincher.keystore | openssl sha1 -binary | openssl base64
+
+
+keytool -exportcert -alias androiddebugkey -keystore C:\Users\Ram\.android\debug.keystore | openssl sha1 -binary | openssl base64
+
+keytool -exportcert -alias androiddebugkey -keystore C:\Users\Ram\.android\debug.keystore | openssl sha1 -binary | openssl base64
+
+Microsoft Windows [Version 6.3.9600]
+(c) 2013 Microsoft Corporation. All rights reserved.
+
+cnpW7qE1MZdPXHU9H6AUTGwf0Kc=  Bmce+9aHdOoVtE7fS3B07tfj7Bc= nQljpDTpDvgtPunnrDrXYwNrzcg=
+
+wG8Y3P94IWJAWniRJaQeEnicH4s=
+
+C:\Users\Ram>
+
+
+ApiKey: AAAAJaL_0BE:APA91bHNlxZu-AenPuH248Ksjfx2I2OfChN0S7HBOMgADPRTziug5F3R80ZnJ9Ipb6nJwj1Yt8Px0gSGIbXJe2jJxLbVq26pmQk42X93u6KkLK_07Jq_I84te5dF9S5t-TGuohs91W-T
+
+----------------------------------------------
+Customization:
+----------------------------------------------
+
+1) Instagram plugin => share video
+
+2) Orientation => the below code needs to be added 
+		
+		import android.content.Context;
+		import android.content.pm.ActivityInfo;
+
+		//Customization part
+        Context context=this.getApplicationContext();
+
+        if(isTablet(context))
+        {
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        }
+        else
+        {
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        }
+		
+		public static boolean isTablet(Context context)
+		{
+			return (context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK)
+					>= Configuration.SCREENLAYOUT_SIZE_LARGE;
+		}
+		
+3)  cordova-plugin-autostart => Disabling autostart for reboot 
+
+4) Image/video share
+
+	In Adroid manifest file, we need to update the below code
+	
+			<intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="*/*" />
+            </intent-filter>
+			
+----------------------------------------------
+https://github.com/j3k0/cordova-plugin-purchase
+
+<uses-permission android:name="com.android.vending.BILLING" />
+
+cordova plugin remove cc.fovea.cordova.purchase
+
+
+http://stackoverflow.com/questions/26449512/how-to-create-signed-apk-file-using-cordova-command-line-interface
+http://developer.android.com/tools/publishing/app-signing.html
+http://developer.android.com/google/play/billing/billing_reference.html
+
+keytool -genkey -v -keystore eclincher.keystore -alias eclinchermobileapps -keyalg RSA -keysize 2048 -validity 10000
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore C:\Users\IZ-ram\Desktop\eclincher.keystore C:\Users\IZ-ram\Desktop\Devices-and-Simulators\web\mobile_app\platforms\android\build\outputs\apk\android-release-unsigned.apk eclinchermobileapps
+
+ram.izaap@gmail.com, gilad.salamander@eclincher.com, tal.mikaelovich@eclincher.com, ronit.fuhrmann@eclincher.com, ayazhan.seitkazina@eclincher.com, arun@izaaptech.in
+
+http://ionicframework.com/docs/guide/publishing.html
+
+
+Social media plugins:
+-----------------------
+cordova -d plugin add C:\Users\IZ-ram\Desktop\phonegap-facebook-plugin --variable APP_ID="443420002423201" --variable APP_NAME="eClincher"
+
+https://github.com/EddyVerbruggen/cordova-plugin-googleplus
+
+cordova plugin add cordova-plugin-twitter
+http://phonegap-plugins.com/plugins/gillardo/phonegap-twitter-plugin
+
+
+
+
+http://developer.telerik.com/featured/securing-phonegapcordova-hybrid-mobile-app/
+
+https://github.com/luis-kaufmann-silva/jquery-p2r
+http://manzzup.blogspot.in/2014/02/making-html-pull-to-refresh-list-for.html
+
+http://photoswipe.com/documentation/getting-started.html
+
+https://github.com/watusi/jquery-mobile-iscrollview
+
+https://github.com/j3k0/cordova-plugin-purchase
+
+
+006325400010780
+
+8870024042
+
+
+------------------------Recurly----------------------------------
+
+https://dev.recurly.com/docs/integrations
+
+https://github.com/recurly/recurly-js
+--------------------
+
+TimelineFeedItem.prototype.show_conversation = function (
+TimelineFeedItem.prototype.show_retweets 
+TimelineFeedItem.prototype.show_comments = function ()
+
+
+http://tamilo.com/vinavidaivettai.html
+
+/*----------Feeds----------*/
+extra-info-line
+power-user-label
+TWSearchContainer
+.multitag user list
+
+
+/*------------ DDDDDD ------------*/
+
+>> pricing page update
+
+>> Settings page
+
+>> Agency 
+
+
+--------------------
+
+keytool -genkey -v -keystore eclincher.keystore -alias eclinchermobileapps -keyalg RSA -keysize 2048 -validity 10000
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore C:\Users\Ram\Desktop\desktop\eclincher.keystore C:\Users\Ram\Documents\GitHub\Devices-and-Simulators\web\mobile_app\platforms\android\build\outputs\apk\android-release-unsigned.apk eclinchermobileapps
+
+C:\Users\Ram\AppData\Local\Android\sdk\build-tools\23.0.2\zipalign -v 4 C:\Users\Ram\Documents\GitHub\Devices-and-Simulators\web\mobile_app\platforms\android\build\outputs\apk\android-release-unsigned.apk C:\Users\Ram\Documents\GitHub\Devices-and-Simulators\web\mobile_app\platforms\android\build\outputs\apk\android-release.apk
+
+C:\Users\Ram>keytool -exportcert -alias eclinchermobileapps -keystore C:\Users\R
+am\Desktop\desktop\eclincher.keystore | openssl sha1 -binary | openssl base64
+Enter keystore password:  eclincher123
+cnpW7qE1MZdPXHU9H6AUTGwf0Kc=
+
+ram.izaap@gmail.com, gilad.salamander@eclincher.com, tal.mikaelovich@eclincher.com, ronit.fuhrmann@eclincher.com, ayazhan.seitkazina@eclincher.com, arun@izaaptech.in
+
+http://developer.android.com/tools/publishing/app-signing.html
+
+
+https://play.google.com/apps/testing/com.eclinchertest
+
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore C:\Users\IZ-ram\Desktop\eclincher.keystore C:\Users\IZ-ram\Desktop\hello\platforms\android\build\outputs\apk\android-release-unsigned.apk eclinchermobileapps
+
+zipalign -v 4 C:\Users\IZ-ram\Desktop\hello\platforms\android\build\outputs\apk\android-release-unsigned.apk C:\Users\IZ-ram\Desktop\hello\platforms\android\build\outputs\apk\android-release.apk
+
+
+
+https://fovea.cc/blog/index.php/3-steps-tutorial-for-phonegap-2x-in-app-purchase-on-ios/
+
+
+
+
+cordova plugin add cc.fovea.cordova.purchase  --variable BILLING_KEY="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhgs6LbnZKDAafcSQfJGUhYEgBbLyXLbs8K4lIr30gyL7Z4c24zGPx937mmpJrGzCmicUXB0LYEcZ9+LzzfEnRXUZ/SGGOsY1xBfpY6D48yPpi6Y4h14HXUqZ63IG4m5C4S2YMqwoeGGLybuj2LDiet+noo+AULsvRE7lUUjPjwyrglQvV9bMqNfaWpKo1F+QztufxfcIr1NCANBLuGhFBVyq6qHcrpEvd2y5bzpl1S6Ur7KvOQqKWqc0ef0cnY5jgSAi/eT2ubB+fDZ7f8Y/IgosmLKA/CN1fD8x6Fewe+OyzVx5dW2G0v0jotpM3Lv6mKvaOxrBEUan68OcFDwl0wIDAQAB"
+
+
+
+iPhoneX screen issue: https://codeburst.io/making-ionic-cordova-app-compatible-for-iphone-x-c84d62b61aa9
+
+Nav App:
+-----------------
+
+Android ApiKey: AIzaSyBeEPVds7Rzv-dcDGYjmN3dVmuCWnxLSdE
+
+ios ApiKey:  AIzaSyChza8FyXxST_O_jSLRtYKTGP4INXhDGUk
+
+
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore E:\projects\eclincher\eclincher.keystore E:\IONIC-eClincher\platforms\android\app\build\outputs\apk\release\app-release-unsigned.apk eclinchermobileappsnew
+C:\Users\IZ-Ram\AppData\Local\Android\Sdk\build-tools\28.0.0\zipalign -v 4 E:\IONIC-eClincher\platforms\android\app\build\outputs\apk\release\app-release-unsigned.apk E:\IONIC-eClincher\platforms\android\app\build\outputs\apk\release\android-release.apk
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore E:\projects\eclincher\eclincher.keystore E:\IONIC-eClincher-new\platforms\android\app\build\outputs\apk\release\app-release-unsigned.apk eclinchermobileappsnew
+C:\Users\IZ-Ram\AppData\Local\Android\Sdk\build-tools\28.0.0\zipalign -v 4 E:\IONIC-eClincher-new\platforms\android\app\build\outputs\apk\release\app-release-unsigned.apk E:\IONIC-eClincher-new\platforms\android\app\build\outputs\apk\release\android-release.apk
+
+
+LIVE Accounts
+-------------------------------
+	ram.basic.001@yopmail.com/Izaap123#
+	ram.basic.1003@yopmail.com/Izaap123#
+	ram.basic.007@yopmail.com
+	ram.agency.1003@yopmail.com
+	
+	ram.agency.002@yopmail.com/Izaap123#
+	ram.agency.003@yopmail.com/Izaap123#
+	ram.premier.002@yopmail.com
+	
+	ram.agency.001@yopmail.com/Izaap123#
+	tm1.agency.001@yopmail.com/Izaap123#
+	tm2.agency.001@yopmail.com/Izaap123#
+
+	ram.premier.001@yopmail.com
+	tm1.premier.001@yopmail.com
+	tm2.premier.001@yopmail.com
+
+
+QA Accounts
+	ram.basic.005@yopmail.com/Izaap123#
+	------------
+	Agency Account
+	---------------
+	shalinianora.izaap+agency@gmail.com / Izaap@247
+	ram.agency.004@yopmail.com/Izaap123#
+	Team members
+	------------
+	tm1.shalinianora.izaap.agency@gmail.com / Izaap@247(Admin)
+	tm2.shalinianora.izaap.agency@gmail.com / Izaap@247(Publishing)
+	tm3.shalinianora.izaap.agency@gmail.com / Izaap@247(TW DMs)
+	
+	tm1.ram.agency.004@yopmail.com
+	tm2.ram.agency.004@yopmail.com
+	
+	Premier Account
+	------------------
+	shalinianora.izaap+premier@gmail.com / Izaap@247
+
+	Team Members
+	-------------
+	tm1.shalinianora.izaap.premier@gmail.com / Izaap@247(Publishing)
+	tm2.shalinianora.izaap.premier@gmail.com / Izaap@247(Admin)
+	tm3.shalinianora.izaap.agency@gmail.com
