@@ -21,9 +21,35 @@ const usersArray = configservice.loginCredentials;
 
 var storage = multer.diskStorage({
 	destination: function (req, file, cb) {
-	cb(null, 'public')
+		// console.log("user_details::",JSON.stringify(req.user));
+		const dir = './public/' + req.user.id;
+    	cb(null, dir);
   },
   filename: function (req, file, cb) {
+	
+
+	const fname = 'public/user_uploads.txt';
+	var text = 'Username: ' + req.user.name + "  Path: /public/" + req.user.id + ' \n';
+
+	fs.exists(fname, function(exists) {
+	   if(exists) {
+		fs.readFile(fname, (err, data) => {
+			data += text;
+			fs.writeFile(fname, data, (err) => {
+				if (err) console.log(err);
+				console.log("Successfully Written to File.");
+			});
+		})
+	   }
+	   else {
+		fs.writeFile(fname, text, (err) => {
+			if (err) console.log(err);
+			console.log("Successfully Written to File.");
+		});
+	   }
+	})
+
+	
 	cb(null, Date.now() + '-' +file.originalname )
   }
 })
@@ -50,8 +76,27 @@ router.get('/getCards', jwtservice.passport.authenticate('jwt', { session: false
 });
 
 
-router.post('/upload', jwtservice.passport.authenticate('jwt', { session: false }), function(req, res) {
+function checkUploadPath(req, res, next) {
+	const dir = './public/' + req.user.id;
+	fs.exists(dir, function(exists) {
+	   if(exists) {
+		 next();
+	   }
+	   else {
+		 fs.mkdir(dir, function(err) {
+		   if(err) {
+			 console.log('Error in folder creation');
+			 next(); 
+		   }  
+		   next();
+		 })
+	   }
+	})
+}
+
+router.post('/upload', jwtservice.passport.authenticate('jwt', { session: false }), checkUploadPath, function(req, res) {
 	log4jservice.info("req.user.id",req.user.id);
+	console.log("req.user.id",req.user.id);
 	const user = usersArray[_.findIndex(usersArray, {id: req.user.id})];
 	// res.status(200).json({message: Object.keys(req).length, cards: user.cards});
 
